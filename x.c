@@ -1,5 +1,5 @@
 #include<stdio.h>
-int scale (int);
+int scale(int);
 int main()
 {
   int x=5,y;
