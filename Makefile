@@ -1,24 +1,11 @@
-final: pro1
-pro1: pro1.c 
-	gcc pro1.o -o final
-pro2: pro2.c
-	gcc  pro2.o -o final
-pro3: pro3.c
-	gcc pro3.o -o final
-pro4: pro4.c
-	gcc  pro4.o -o final
-pro5: pro5.c
-	gcc pro5.o -o final
+final: x.o y.o 
+	gcc -o final x.o y.o
+x.o: x.c
+	gcc -c x.c -o outdir/finals.o  
+y.o: y.c scale.h
+	gcc -c y.c -o outdir/finals.o
 clean:
-	rm *.o final
-check:
-	if [$$? -ne =0] \
-	then \
-	   echo "failed" \
-	false \
-	fi
-out:
-	 ./final
+	rm -rf  final
 
 
 
